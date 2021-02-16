@@ -104,7 +104,7 @@ class AdminUserController extends Controller
         $blog =  User::find($request->user_id);
         $blog->name = $request->name;
         $blog->email = $request->email;
-        $blog->password = bcrypt($request->password);
+        //$blog->password = bcrypt($request->password);
         $blog->role_id = $request->role_id;
         $blog->save();
         return redirect(PREFIX.'admin/user/list')->with('message','User Updated Successfully');
